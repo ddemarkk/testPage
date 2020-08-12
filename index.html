@@ -13,54 +13,22 @@
 
 <body>
   <div id="root"></div>
-  <script>
+<script>
     "use strict";
     window.addEventListener(
       "load",
       function () {
-        function guid() { return s4() + s4() + s4() + s4() + s4() + s4() + s4() + s4(); }
-        function s4() {
-          return Math.floor((1 + Math.random()) * 0x10000)
-            .toString(16)
-            .substring(4)
-        }
-        
-        var script = document.createElement("script");
-        script.src =
-          "https://app.activechat.ai/gateway/script/1235315b-2752-4109-b99d-21b1d0bcb4b0";
-        script.id = "ACCW_EMBED";
-        document.getElementsByTagName("head")[0].appendChild(script);
-        window.acChatWidgetLoaded = function () {
-          setTimeout(function () {
-            location.reload()
-          }, 10800 * 1000)
 
-          var now = new Date();
-          var time = now.getTime();
-          time += 10800 * 1000;
-          time += 40000
-          now.setTime(time);
-
-          const userActive = document.cookie.split(';').map(element => element.split('=')[0]).filter(element => element.trim() === 'userActive')
-
-          if (!userActive.length) {
-            document.cookie =
-              'userActive=' + true +
-              '; expires=' + now.toUTCString() +
-              '; path=/'
-            document.cookie = document.cookie = 'userID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;'
-            document.cookie = `userID=${guid()}`
-          } else {
-            document.cookie =
-              'userActive=' + true +
-              '; expires=' + now.toUTCString() +
-              '; path=/'
-          }
-        }
+          var script = document.createElement("script");
+          script.src =
+            "http://localhost:5000/gateway/script/1235315b-2752-4109-b99d-21b1d0bcb4b0";
+          script.id = "ACCW_EMBED";
+          document.getElementsByTagName("head")[0].appendChild(script);
       },
       false
     );
   </script>
+
 </body>
 
 </html>
