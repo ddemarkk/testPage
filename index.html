@@ -51,11 +51,17 @@
           };
         };
         window.acChatWidgetLoaded = function () {
+          setTimeout(function () {
+            location.reload()
+          }, 10805 * 1000)
+
           var now = new Date();
           var time = now.getTime();
           time += 10800 * 1000;
           now.setTime(time);
+
           const userActive = document.cookie.split(';').map(element => element.split('=')[0]).filter(element => element.trim() === 'userActive')
+
           if (!userActive.length) {
             document.cookie =
               'userActive=' + true +
@@ -74,6 +80,7 @@
       false
     );
   </script>
+  
 
 </body>
 
