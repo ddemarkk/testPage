@@ -37,14 +37,9 @@
         var customerNumber = window.actual_customer_no;
         window.acTrackingLoaded = function () {
           window.addEventListener('message', (event) => {
-          if (event.data === 'open') { 
-            console.log('Open', event.data);
-            activechat.track('widget_open') 
-          }
-          else if (event.data === 'close') { 
-              console.log('Close', event.data);
-             activechat.track('widget_close') 
-          }
+          console.log('Message', event.data);
+          if (event.data === 'open') activechat.track('widget_open');
+          else if (event.data === 'close') activechat.track('widget_close') 
         })
           activechat.track('Authorized', {
             userLogin: userLogin,
