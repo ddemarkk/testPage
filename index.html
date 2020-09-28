@@ -36,6 +36,10 @@
         var userId = window.user_id;
         var customerNumber = window.actual_customer_no;
         window.acTrackingLoaded = function () {
+          window.addEventListener('message', (event) => {
+            if (event.data === 'open') activechat.track('widget_open');
+            else if (event.data === 'close') activechat.track('widget_close')
+          });
           activechat.track('Authorized', {
             userLogin: userLogin,
             userEmail: userEmail,
@@ -51,10 +55,6 @@
           };
         };
         window.acChatWidgetLoaded = function () {
-          window.addEventListener('message', (event) => {
-            if (event.data === 'open') activechat.track('widget_open');
-            else if (event.data === 'close') activechat.track('widget_close')
-          });
           setTimeout(function () {
             location.reload()
           }, 10805 * 1000)
