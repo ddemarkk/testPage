@@ -35,12 +35,12 @@
         var userEmail = window.user_email;
         var userId = window.user_id;
         var customerNumber = window.actual_customer_no;
-        window.addEventListener('message', (event) => {
+        window.acTrackingLoaded = function () {
+          window.addEventListener('message', (event) => {
           console.log('Message', event.data);
           if (event.data === 'open' || event.data === 'open_message' ) activechat.track('widget_open')
           else if (event.data === 'close' || event.data === 'close_message') activechat.track('widget_close')
         })
-        window.acTrackingLoaded = function () {
           activechat.track('Authorized', {
             userLogin: userLogin,
             userEmail: userEmail,
