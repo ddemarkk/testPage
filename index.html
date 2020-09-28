@@ -39,7 +39,7 @@
           window.addEventListener('message', (event) => {
           console.log('Message', event.data);
           if (event.data === 'open' || event.data === 'open_message' ) activechat.track('widget_close')
-          else if (event.data === 'close' || event.data === 'close_message') activechat.track('widget_open')
+          if (event.data === 'close' || event.data === 'close_message') activechat.track('widget_open')
         })
           activechat.track('Authorized', {
             userLogin: userLogin,
