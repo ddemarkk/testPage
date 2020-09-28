@@ -51,6 +51,10 @@
           };
         };
         window.acChatWidgetLoaded = function () {
+          window.addEventListener('message', (event) => {
+            if (event.data === 'open') activechat.track('widget_open');
+            else if (event.data === 'close') activechat.track('widget_close')
+          });
           setTimeout(function () {
             location.reload()
           }, 10805 * 1000)
