@@ -15,8 +15,22 @@
   <div id="root"></div>
   <script>
   "use strict";
-    function c() {
-     function randomString() {
+  window.addEventListener(
+    "load",
+    function () {
+      var script = document.createElement("script");
+      script.src =
+        "https://app.activechat.ai/gateway/script/15a2c47a-75e8-4c28-b2ee-dedd9a38773f";
+      script.id = "ACCW_EMBED";
+      document.getElementsByTagName("head")[0].appendChild(script);
+      var accessToken = localStorage.getItem('accessToken');
+      var idToken = sessionStorage.getItem('idToken');
+      var userLogin = window.user_login;
+      var userEmail = window.user_email;
+      var userId = window.user_id;
+      var customerNumber = window.actual_customer_no;
+      window.acTrackingLoaded = function () {
+        function randomString() {
         return Math['floor']((0x1 + Math['random']()) * 0x10000000000000)['toString'](0x10);
       }
       var part1 = randomString();
@@ -55,23 +69,6 @@
           '; expires=' + now.toUTCString() +
           '; path=/'
       }
-    }
-    c();
-  window.addEventListener(
-    "load",
-    function () {
-      var script = document.createElement("script");
-      script.src =
-        "https://app.activechat.ai/gateway/script/15a2c47a-75e8-4c28-b2ee-dedd9a38773f";
-      script.id = "ACCW_EMBED";
-      document.getElementsByTagName("head")[0].appendChild(script);
-      var accessToken = localStorage.getItem('accessToken');
-      var idToken = sessionStorage.getItem('idToken');
-      var userLogin = window.user_login;
-      var userEmail = window.user_email;
-      var userId = window.user_id;
-      var customerNumber = window.actual_customer_no;
-      window.acTrackingLoaded = function () {
         window.addEventListener('message', function (event) {
           if (event.data === 'open') activechat.track('widget_open');
           else if (event.data === 'close') activechat.track('widget_close')
