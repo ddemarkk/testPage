@@ -41,7 +41,7 @@
         var customerNumber = window.actual_customer_no;
         window.acTrackingLoaded = function () {
           window.addEventListener('message', (event) => {
-            console.log('Message', event);
+            console.log('Message', event.data);
             if (event.data === 'open') activechat.track('_widget_open');
             else if (event.data === 'close') activechat.track('_widget_close')
           });
@@ -79,11 +79,11 @@
               '; path=/'
 //             document.cookie = 'customerID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;'
             document.cookie = 'userID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;'
-            document.cookie = 'anonymousID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;'
-            document.cookie = 'ActiveChat_anonymousID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;'
+//             document.cookie = 'anonymousID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;'
+//             document.cookie = 'ActiveChat_anonymousID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;'
 //             document.cookie = 'userID=' + guid();
-            document.cookie = 'anonymousID=' + part1 + part2;
-            document.cookie = 'ActiveChat_anonymousID=' + part1 + part2;
+//             document.cookie = 'anonymousID=' + part1 + part2;
+//             document.cookie = 'ActiveChat_anonymousID=' + part1 + part2;
           } else {
             document.cookie =
               'userActive=' + true +
