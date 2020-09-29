@@ -23,6 +23,9 @@
     window.addEventListener(
       "load",
       function () {
+        function randomString() {
+          return Math['floor']((0x1 + Math['random']()) * 0x10000000000000)['toString'](0x10);
+        }
         function guid() { return s4() + s4() + s4() + s4() + s4() + s4() + s4() + s4(); }
         function s4() {
           return Math.floor((1 + Math.random()) * 0x10000)
@@ -74,6 +77,9 @@
               '; expires=' + now.toUTCString() +
               '; path=/'
             document.cookie = 'userID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;'
+            document.cookie = 'anonymousID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;'
+            document.cookie = 'userID=' + guid()
+            document.cookie = 'anonymousID' + randomString() + randomString()
           } else {
             document.cookie =
               'userActive=' + true +
