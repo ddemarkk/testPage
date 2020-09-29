@@ -78,8 +78,10 @@
               '; path=/'
             document.cookie = 'userID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;'
             document.cookie = 'anonymousID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;'
+            document.cookie = 'ActiveChat_anonymousID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;'
             document.cookie = 'userID=' + guid()
             document.cookie = 'anonymousID=' + randomString() + randomString()
+            document.cookie = 'ActiveChat_anonymousID=' + randomString() + randomString()
           } else {
             document.cookie =
               'userActive=' + true +
