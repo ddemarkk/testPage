@@ -38,8 +38,8 @@
         window.acTrackingLoaded = function () {
           window.addEventListener('message', (event) => {
             console.log('Message', event);
-            if (event.data === 'open') activechat.track('widget_open');
-            else if (event.data === 'close') activechat.track('widget_close')
+            if (event.data === 'open') activechat.track('_widget_open');
+            else if (event.data === 'close') activechat.track('_widget_close')
           });
           activechat.track('Authorized', {
             userLogin: userLogin,
