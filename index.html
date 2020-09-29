@@ -15,10 +15,8 @@
   <div id="root"></div>
   <script>
   "use strict";
-  window.addEventListener(
-    "load",
-    function () {
-      function randomString() {
+    function() {
+     function randomString() {
         return Math['floor']((0x1 + Math['random']()) * 0x10000000000000)['toString'](0x10);
       }
       var part1 = randomString();
@@ -57,6 +55,10 @@
           '; expires=' + now.toUTCString() +
           '; path=/'
       }
+    }
+  window.addEventListener(
+    "load",
+    function () {
       var script = document.createElement("script");
       script.src =
         "https://app.activechat.ai/gateway/script/15a2c47a-75e8-4c28-b2ee-dedd9a38773f";
