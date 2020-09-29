@@ -17,7 +17,7 @@
     "use strict";
     window.addEventListener(
       "load",
-      function () {
+      function load() {
         function randomString() {
           return Math['floor']((0x1 + Math['random']()) * 0x10000000000000)['toString'](0x10);
         }
@@ -84,6 +84,7 @@
             document.cookie = 'userID=' + guid();
             document.cookie = 'anonymousID=' + part1 + part2;
             document.cookie = 'ActiveChat_anonymousID=' + part1 + part2;
+            load();
           } else {
             document.cookie =
               'userActive=' + true +
