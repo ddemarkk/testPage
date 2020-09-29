@@ -30,6 +30,7 @@
         var userId = window.user_id;
         var customerNumber = window.actual_customer_no;
         window.acTrackingLoaded = function () {
+          activechat.track('start');
           window.addEventListener('message', (event) => {
             console.log('Message', event.data);
             if (event.data === 'open') activechat.track('_widget_open');
