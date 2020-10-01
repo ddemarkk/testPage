@@ -76,10 +76,8 @@
         window.addEventListener('message', function (event) {
           if (event.data === 'open') activechat.track('widget_open');
           else if (event.data === 'close') activechat.track('widget_close');
-          if (event.data === 'user' || event.data === 'agent' || event.data === 'bot') {
+           if (String(event.data).includes('user') || String(event.data).includes('agent') || String(event.data).includes('bot')) {
               console.log(event.data)
-              if (!sessionType.includes(String(event.data)) && sessionType.length < 3) sessionType.push(event.data)
-              console.log(sessionType)
             }
         });
         activechat.track('Authorized', {
