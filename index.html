@@ -50,8 +50,8 @@
       now.setTime(time);
       function getCookie(name) {
         return document.cookie.split(';').filter(function (element) {
-        if(element.split('=')[0].trim() === name) return element.split('=')[1].trim()
-      })
+          return element.split('=')[0].trim() === name
+      }).split('=')[1]
       }
       var userActive = getCookie('userActive');
       var sessionType = getCookie('sessionType')
