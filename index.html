@@ -22,6 +22,13 @@
       script.src = "https://dev.activechat.ai/gateway/script/5b440966-f0f4-4d94-8785-6a0a7d8e9eb9";
       script.id = "ACCW_EMBED";
       document.getElementsByTagName("head")[0].appendChild(script);
+      window.addEventListener('message', function (event) {
+          if (event.data === 'open') activechat.track('widget_open');
+          else if (event.data === 'close') activechat.track('widget_close');
+           if (String(event.data).includes('user') || String(event.data).includes('agent') || String(event.data).includes('bot')) {
+              console.log(event.data)
+            }
+        });
       function randomString() {
         return Math['floor']((0x1 + Math['random']()) * 0x10000000000000)['toString'](0x10);
       }
@@ -73,13 +80,6 @@
       var userId = window.user_id;
       var customerNumber = window.actual_customer_no;
       window.acTrackingLoaded = function () {
-        window.addEventListener('message', function (event) {
-          if (event.data === 'open') activechat.track('widget_open');
-          else if (event.data === 'close') activechat.track('widget_close');
-           if (String(event.data).includes('user') || String(event.data).includes('agent') || String(event.data).includes('bot')) {
-              console.log(event.data)
-            }
-        });
         activechat.track('Authorized', {
           userLogin: userLogin,
           userEmail: userEmail,
