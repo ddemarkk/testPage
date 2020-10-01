@@ -41,8 +41,8 @@
       time += 10800 * 1000;
       now.setTime(time);
       function getCookie(name) {
-        document.cookie.split(';').map(function (element) {
-        console.log(element.split('=')[0].trim() === name)
+        document.cookie.split(';').filter(function (element) {
+        console.log(element)
         return element.split('=')[0].trim() === name && element.split('=')[0]
       })
       }
