@@ -62,6 +62,7 @@
           '; expires=' + now.toUTCString() +
           '; path=/'
       }
+      var sessionType = ['bot'];
       var accessToken = localStorage.getItem('accessToken');
       var idToken = sessionStorage.getItem('idToken');
       var userLogin = window.user_login;
@@ -74,7 +75,6 @@
           else if (event.data === 'close') activechat.track('widget_close');
           if (event.data === 'user' || event.data === 'agent' || event.data === 'bot') {
               console.log(event.data)
-              var sessionType = ['bot'];
               if (!sessionType.includes(String(event.data)) && sessionType.length < 3) sessionType.push(event.data)
               console.log(sessionType)
             }
