@@ -74,7 +74,7 @@
           else if (event.data === 'close') activechat.track('widget_close');
           if (event.data === 'user' || event.data === 'agent' || event.data === 'bot') {
               console.log(event.data)
-              const session = ['bot']
+              let session = ['bot'];
               if (!session.includes(String(event.data)) && session.length < 3) session.push(event.data)
               console.log(session)
             }
