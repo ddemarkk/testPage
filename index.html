@@ -42,8 +42,8 @@
       now.setTime(time);
       function getCookie(name) {
         return document.cookie.split(';').filter(function (element) {
-          console.log(element.split('=')[0].trim())
-//         return element.split('=')[0].trim() === name && element.split('=')[0].trim()
+//           console.log(element.split('=')[0].trim())
+        return element.split('=')[0].trim() === name && element.split('=')[0].trim()
       })
       }
       var userActive = getCookie('userActive');
