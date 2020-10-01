@@ -75,9 +75,7 @@
           if (event.data === 'user' || event.data === 'agent' || event.data === 'bot') {
               console.log(event.data)
               const session = ['bot']
-              if (!session.includes(event.data)
-                && (String(event.data) === 'user' || String(event.data) === 'agent')
-                && session.length < 3) session.push(event.data)
+              if (!session.includes(String(event.data)) && session.length < 3) session.push(event.data)
               console.log(session)
             }
         });
