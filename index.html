@@ -51,7 +51,7 @@
       function getCookie(name) {
         return document.cookie.split(';').filter(function (element) {
           return element.split('=')[0].trim() === name
-      }).split('=')[1]
+      })[0].split('=')[1]
       }
       var userActive = getCookie('userActive');
       var sessionType = getCookie('sessionType')
