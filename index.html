@@ -48,13 +48,17 @@
       var time = now.getTime();
       time += 10800 * 1000;
       now.setTime(time);
-      function getCookie(name) {
-        return document.cookie.split(';').filter(function (element) {
-          return element.split('=')[0].trim() === name
-      })[0].split('=')[1]
-      }
-      var userActive = getCookie('userActive');
-      var sessionType = getCookie('sessionType')
+//       function getCookie(name) {
+//         return document.cookie.split(';').filter(function (element) {
+//           return element.split('=')[0].trim() === name
+//       })[0].split('=')[1]
+//       }
+      var userActive = document.cookie.split(';').map(function (element) {
+ return element.split('=')[0]
+ }).filter(function (element) {
+ return element.trim() === 'userActive'
+ })
+
       console.log(userActive, sessionType)
       if (!userActive.length) {
         document.cookie =
