@@ -41,7 +41,7 @@
               console.log(event.data, sessionHistory, event.data.split(',').length);
               if(sessionHistory && (sessionHistory.split(',').length < event.data.split(',').length || sessionHistory === 'bot')) {
                 console.log(event.data)
-                document.cookie = 'sessionHistory=' + event.data
+                document.cookie = 'sessionHistory=' + event.data + '; expires=' + now.toUTCString() + '; path=/'
                 activechat.track('session_types', { session_type: event.data });
               } 
             }
