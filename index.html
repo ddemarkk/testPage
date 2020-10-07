@@ -28,13 +28,13 @@
       script.src = "http://localhost:5000/gateway/script/5b440966-f0f4-4d94-8785-6a0a7d8e9eb9";
       script.id = "ACCW_EMBED";
       document.getElementsByTagName("head")[0].appendChild(script);
-      var sessionHistory = getCookie('sessionHistory')
-      if(!sessionHistory) document.cookie = 'sessionHistory=bot'
+      if(!getCookie(sessionHistory)) document.cookie = 'sessionHistory=bot';
+      var sessionHistory = getCookie('sessionHistory');
       window.addEventListener('message', function (event) {
           if (event.data === 'open') activechat.track('widget_open');
           else if (event.data === 'close') activechat.track('widget_close');
            if (String(event.data).includes('user') || String(event.data).includes('agent') || String(event.data).includes('bot')) {
-              console.log(event.data,event.data.split(',').length);
+              console.log(event.data, sessionHistory, event.data.split(',').length);
               if(sessionHistory && sessionHistory.split(',').length < event.data.split(',').length ) {
                 console.log(event.data)
                 document.cookie = 'sessionHistory=' + event.data
