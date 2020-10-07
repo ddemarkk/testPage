@@ -34,7 +34,7 @@
           if (event.data === 'open') activechat.track('widget_open');
           else if (event.data === 'close') activechat.track('widget_close');
            if (String(event.data).includes('user') || String(event.data).includes('agent') || String(event.data).includes('bot')) {
-              console.log(event.data, sessionHistory.split(',').length, event.data.split(',').length);
+              console.log(event.data event.data.split(',').length);
               if(sessionHistory && sessionHistory.split(',').length < event.data.split(',').length ) {
                 console.log(event.data)
                 document.cookie = 'sessionHistory=' + event.data
