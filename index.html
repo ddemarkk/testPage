@@ -18,16 +18,26 @@
   window.addEventListener(
     "load",
     function () {
+      function getCookie(name) {
+        var matches = document.cookie.match(new RegExp(
+          "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+        ));
+        return matches ? decodeURIComponent(matches[1]) : undefined;
+      }
       var script = document.createElement("script");
       script.src = "http://localhost:5000/gateway/script/5b440966-f0f4-4d94-8785-6a0a7d8e9eb9";
       script.id = "ACCW_EMBED";
       document.getElementsByTagName("head")[0].appendChild(script);
+      var sessionHistory = getCookie('sessionHistory')
       window.addEventListener('message', function (event) {
           if (event.data === 'open') activechat.track('widget_open');
           else if (event.data === 'close') activechat.track('widget_close');
            if (String(event.data).includes('user') || String(event.data).includes('agent') || String(event.data).includes('bot')) {
               console.log(event.data);
-              activechat.track('session_types', { session_type: event.data });
+//               if(sessionHistory && sessionHistory.split(',').length < event.data.split(',').length ) {
+                
+                activechat.track('session_types', { session_type: event.data });
+//               }
             }
         });
       function randomString() {
@@ -48,14 +58,9 @@
       var time = now.getTime();
       time += 10800 * 1000;
       now.setTime(time);
-      var userActive = document.cookie.split(';').map(function (element) {
-           return element.split('=')[0]
-         }).filter(function (element) {
-       return element.trim() === 'userActive'
-      })
-
-      console.log(userActive, sessionType)
-      if (!userActive.length) {
+      var userActive = getCookie('userActive')
+      console.log(userActive)
+      if (!userActive) {
         document.cookie =
           'userActive=' + true +
           '; expires=' + now.toUTCString() +
