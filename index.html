@@ -33,7 +33,6 @@
       script.id = "ACCW_EMBED";
       document.getElementsByTagName("head")[0].appendChild(script);
       if(!getCookie('sessionHistory')) document.cookie = 'sessionHistory=bot;';
-      activechat.track('session_types', { session_type: getCookie('sessionHistory') });
       window.addEventListener('message', function (event) {
           if (event.data === 'open') activechat.track('widget_open');
           else if (event.data === 'close') activechat.track('widget_close');
@@ -42,7 +41,9 @@
               if(getCookie('sessionHistory') && (getCookie('sessionHistory').split(',').length < event.data.split(',').length || getCookie('sessionHistory') === 'bot')) {
                 console.log(event.data)
                 document.cookie = 'sessionHistory=' + event.data;
-                activechat.track('session_types', { session_type: event.data });
+                setTimeout(function () {
+                  activechat.track('session_types', { session_type: event.data })
+                }, 1000);
               } 
             }
         });
