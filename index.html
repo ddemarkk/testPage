@@ -24,11 +24,15 @@
         ));
         return matches ? decodeURIComponent(matches[1]) : undefined;
       }
+      var now = new Date();
+      var time = now.getTime();
+      time += 10800 * 1000;
+      now.setTime(time);
       var script = document.createElement("script");
       script.src = "http://localhost:5000/gateway/script/5b440966-f0f4-4d94-8785-6a0a7d8e9eb9";
       script.id = "ACCW_EMBED";
       document.getElementsByTagName("head")[0].appendChild(script);
-      if(!getCookie('sessionHistory')) document.cookie = 'sessionHistory=bot';
+      if(!getCookie('sessionHistory')) document.cookie = 'sessionHistory=bot' + '; expires=' + now.toUTCString() + '; path=/'  ;
       var sessionHistory = getCookie('sessionHistory');
       window.addEventListener('message', function (event) {
           if (event.data === 'open') activechat.track('widget_open');
@@ -56,10 +60,6 @@
       setTimeout(function () {
         location.reload()
       }, 10805 * 1000)
-      var now = new Date();
-      var time = now.getTime();
-      time += 10800 * 1000;
-      now.setTime(time);
       var userActive = getCookie('userActive')
       console.log(userActive)
       if (!userActive) {
