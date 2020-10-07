@@ -27,9 +27,7 @@
           else if (event.data === 'close') activechat.track('widget_close');
            if (String(event.data).includes('user') || String(event.data).includes('agent') || String(event.data).includes('bot')) {
               console.log(event.data);
-             setTimeout(function () {
-                activechat.track('session_types', { session_type: event.data });
-             }, 2000)
+              activechat.track('session_types', { session_type: event.data });
             }
         });
       function randomString() {
