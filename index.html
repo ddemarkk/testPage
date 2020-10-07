@@ -61,8 +61,7 @@
       setTimeout(function () {
         location.reload()
       }, 10805 * 1000)
-      var userActive = getCookie('userActive')
-      console.log(userActive)
+      var userActive = getCookie('userActive');
       if (!userActive) {
         document.cookie =
           'userActive=' + true +
@@ -81,7 +80,6 @@
           '; expires=' + now.toUTCString() +
           '; path=/'
       }
-      var sessionType = ['bot'];
       var accessToken = localStorage.getItem('accessToken');
       var idToken = sessionStorage.getItem('idToken');
       var userLogin = window.user_login;
