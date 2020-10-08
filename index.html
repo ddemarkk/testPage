@@ -76,7 +76,7 @@
         document.cookie = 'ActiveChat_anonymousID=' + part1 + part2;
         setTimeout(function () {
           activechat.track('_page_visit');
-        }, 0)
+        }, 10)
       } else {
         document.cookie =
           'userActive=' + true +
