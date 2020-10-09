@@ -74,7 +74,7 @@
         document.cookie = 'sessionHistory=bot';
         document.cookie = 'anonymousID=' + part1 + part2;
         document.cookie = 'ActiveChat_anonymousID=' + part1 + part2;
-        activechat.track('_page_visit');
+        if(activechat) activechat.track('_page_visit');
       } else {
         document.cookie =
           'userActive=' + true +
