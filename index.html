@@ -18,6 +18,7 @@
   window.addEventListener(
     "load",
     function () {
+      var script = document.createElement("script");
       loadWidget();
       function getCookie(name) {
         var matches = document.cookie.match(new RegExp(
@@ -26,7 +27,6 @@
         return matches ? decodeURIComponent(matches[1]) : undefined;
       };
       function loadWidget() {
-        var script = document.createElement("script");
         script.src = "https://app.activechat.ai/gateway/script/1235315b-2752-4109-b99d-21b1d0bcb4b0";
         script.id = "ACCW_EMBED";
         document.getElementsByTagName("head")[0].appendChild(script);
