@@ -18,15 +18,14 @@
   window.addEventListener(
     "load",
     function () {
-      loadWidget();
       function getCookie(name) {
         var matches = document.cookie.match(new RegExp(
           "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
         ));
         return matches ? decodeURIComponent(matches[1]) : undefined;
       };
+      var script = document.createElement("script");
       function loadWidget() {
-        var script = document.createElement("script");
         script.src = "https://app.activechat.ai/gateway/script/1235315b-2752-4109-b99d-21b1d0bcb4b0";
         script.id = "ACCW_EMBED";
         document.getElementsByTagName("head")[0].appendChild(script);
