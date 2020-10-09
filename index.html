@@ -80,7 +80,10 @@
           '; expires=' + now.toUTCString() +
           '; path=/'
       }
-      if(activechat) activechat.track('_page_visit');
+      console.log(activechat)
+      setTimeout(function() {
+        activechat.track('_page_visit');
+      }, 2000)
       var accessToken = localStorage.getItem('accessToken');
       var idToken = sessionStorage.getItem('idToken');
       var userLogin = window.user_login;
