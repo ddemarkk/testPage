@@ -73,13 +73,15 @@
         document.cookie = 'anonymousID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
         document.cookie = 'ActiveChat_anonymousID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
         document.cookie = 'sessionHistory=bot';
-        location.reload()
       } else {
         document.cookie =
           'userActive=' + true +
           '; expires=' + now.toUTCString() +
           '; path=/'
       }
+      setTimeout(function() {
+        location.reload()
+      }, 4000)
       var accessToken = localStorage.getItem('accessToken');
       var idToken = sessionStorage.getItem('idToken');
       var userLogin = window.user_login;
