@@ -81,9 +81,6 @@
           '; path=/'
       }
       console.log(activechat)
-      setTimeout(function() {
-        activechat.track('_page_visit');
-      }, 2000)
       var accessToken = localStorage.getItem('accessToken');
       var idToken = sessionStorage.getItem('idToken');
       var userLogin = window.user_login;
@@ -91,6 +88,7 @@
       var userId = window.user_id;
       var customerNumber = window.actual_customer_no;
       window.acTrackingLoaded = function () {
+       activechat.track('_page_visit');
         activechat.track('Authorized', {
           userLogin: userLogin,
           userEmail: userEmail,
