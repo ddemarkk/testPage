@@ -74,13 +74,13 @@
         document.cookie = 'sessionHistory=bot';
         document.cookie = 'anonymousID=' + part1 + part2;
         document.cookie = 'ActiveChat_anonymousID=' + part1 + part2;
-        if(activechat) activechat.track('_page_visit');
       } else {
         document.cookie =
           'userActive=' + true +
           '; expires=' + now.toUTCString() +
           '; path=/'
       }
+      if(activechat) activechat.track('_page_visit');
       var accessToken = localStorage.getItem('accessToken');
       var idToken = sessionStorage.getItem('idToken');
       var userLogin = window.user_login;
