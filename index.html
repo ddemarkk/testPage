@@ -38,9 +38,7 @@
               if(getCookie('sessionHistory') && (getCookie('sessionHistory').split(',').length < event.data.split(',').length || getCookie('sessionHistory') === 'bot')) {
                 console.log(event.data)
                 document.cookie = 'sessionHistory=' + event.data;
-                setTimeout(function () {
-                    activechat.track('session_types', { session_type: event.data })
-                }, 2000)
+                setTimeout("activechat.track('session_types', { session_type: event.data });", 2000)
               } 
             }
         });
@@ -48,7 +46,6 @@
       var time = now.getTime();
       time += 10800 * 1000;
       now.setTime(time);
-      console.log(now)
       function guid() { return s4() + s4() + s4() + s4() + s4() + s4() + s4() + s4(); }
       function s4() {
         return Math.floor((1 + Math.random()) * 0x10000)
