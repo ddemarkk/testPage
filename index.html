@@ -28,7 +28,7 @@
       script.src = "https://app.activechat.ai/gateway/script/1235315b-2752-4109-b99d-21b1d0bcb4b0";
       script.id = "ACCW_EMBED";
       document.getElementsByTagName("head")[0].appendChild(script);
-      activechat.track('_page_visit')
+//       activechat.track('_page_visit')
       if(!getCookie('sessionHistory')) document.cookie = 'sessionHistory=bot;';
       window.addEventListener('message', function (event) {
           if (event.data === 'open') activechat.track('widget_open');
@@ -50,11 +50,11 @@
       time += 10800 * 1000;
       now.setTime(time);
       console.log(now)
-      function randomString() {
-        return Math['floor']((0x1 + Math['random']()) * 0x10000000000000)['toString'](0x10);
-      }
-      var part1 = randomString();
-      var part2 = randomString();
+//       function randomString() {
+//         return Math['floor']((0x1 + Math['random']()) * 0x10000000000000)['toString'](0x10);
+//       }
+//       var part1 = randomString();
+//       var part2 = randomString();
       function guid() { return s4() + s4() + s4() + s4() + s4() + s4() + s4() + s4(); }
       function s4() {
         return Math.floor((1 + Math.random()) * 0x10000)
