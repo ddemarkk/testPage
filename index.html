@@ -32,7 +32,7 @@
       script.src = "https://app.activechat.ai/gateway/script/1235315b-2752-4109-b99d-21b1d0bcb4b0";
       script.id = "ACCW_EMBED";
       document.getElementsByTagName("head")[0].appendChild(script);
-      activechat.track('_page_visit')
+//       activechat.track('_page_visit')
       if(!getCookie('sessionHistory')) document.cookie = 'sessionHistory=bot;';
       window.addEventListener('message', function (event) {
           if (event.data === 'open') activechat.track('widget_open');
