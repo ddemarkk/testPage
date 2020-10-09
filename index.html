@@ -49,7 +49,7 @@
         document.cookie = 'userID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
         document.cookie = 'anonymousID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
         document.cookie = 'ActiveChat_anonymousID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-        document.cookie = 'userID=;' + guid();
+        document.cookie = 'userID=' + guid();
         document.cookie = 'anonymousID=' + part1 + part2;
         document.cookie = 'ActiveChat_anonymousID=' + part1 + part2;
       } else {
@@ -63,7 +63,7 @@
         script.src = "https://app.activechat.ai/gateway/script/1235315b-2752-4109-b99d-21b1d0bcb4b0";
         script.id = "ACCW_EMBED";
         document.getElementsByTagName("head")[0].appendChild(script);
-      }, 1000)
+      }, 2000)
       if(!getCookie('sessionHistory')) document.cookie = 'sessionHistory=bot;';
       window.addEventListener('message', function (event) {
           if (event.data === 'open') activechat.track('widget_open');
