@@ -68,7 +68,9 @@
         document.cookie = 'anonymousID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
         document.cookie = 'ActiveChat_anonymousID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
         var head = document.getElementsByTagName('head')[0];
+        var cdn = document.getElementById('ACCW_CDN');
         head.removeChild(script);
+        head.removeChild(cdn);
         setTimeout(function() {
           loadWidget();
         }, 3000);
