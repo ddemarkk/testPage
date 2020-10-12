@@ -54,7 +54,6 @@
           else if (event.data === 'close') activechat.track('widget_close');
            if (String(event.data).includes('user') || String(event.data).includes('agent') || String(event.data).includes('bot')) {
               console.log(document.domain)
-              activechat.track('domain_type', { domain_url: document.domain })
               if(getCookie('sessionHistory') && (getCookie('sessionHistory').split(',').length < event.data.split(',').length)) {
                 console.log(event.data)
                 document.cookie = 'sessionHistory=' + event.data;
