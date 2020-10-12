@@ -57,7 +57,9 @@
               if(getCookie('sessionHistory') && (getCookie('sessionHistory').split(',').length < event.data.split(',').length)) {
                 console.log(event.data)
                 document.cookie = 'sessionHistory=' + event.data;
-                activechat.track('session_types', { session_type: getCookie('sessionHistory') });
+                setTimeout(function() {
+                  activechat.track('session_types', { session_type: getCookie('sessionHistory') });
+                })
               } 
             }
         });
