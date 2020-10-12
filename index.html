@@ -59,7 +59,7 @@
                 console.log(event.data)
                 document.cookie = 'sessionHistory=' + event.data;
                 setTimeout(function() {
-                  activechat.track('session_types', { session_type: event.data });
+                  activechat.track('session_types', { session_type: getCookie('sessionHistory') });
                 }, 2000)
               } 
             }
