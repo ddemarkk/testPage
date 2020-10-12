@@ -58,9 +58,7 @@
               if(getCookie('sessionHistory') && (getCookie('sessionHistory').split(',').length < event.data.split(',').length || getCookie('sessionHistory') === 'bot')) {
                 console.log(event.data)
                 document.cookie = 'sessionHistory=' + event.data;
-                setTimeout(function() {
-                  activechat.track('session_types', { session_type: getCookie('sessionHistory') });
-                }, 2000)
+                activechat.track('session_types', { session_type: getCookie('sessionHistory') });
               } 
             }
         });
