@@ -50,26 +50,26 @@
       var userId = window.user_id;
       var customerNumber = window.actual_customer_no;
       window.acTrackingLoaded = function () {
-        var now = new Date();
-      var time = now.getTime();
-      time += 10800 * 1000;
-      now.setTime(time);
-      setTimeout("location.reload(true);",10805 * 1000);
-      var userActive = getCookie('userActive');
-      if (!userActive) {
-        document.cookie =
-          'userActive=' + true +
-          '; expires=' + now.toUTCString() +
-          '; path=/';
-        document.cookie = 'userID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+//         var now = new Date();
+//       var time = now.getTime();
+//       time += 10800 * 1000;
+//       now.setTime(time);
+//       setTimeout("location.reload(true);",10805 * 1000);
+//       var userActive = getCookie('userActive');
+//       if (!userActive) {
+//         document.cookie =
+//           'userActive=' + true +
+//           '; expires=' + now.toUTCString() +
+//           '; path=/';
+//         document.cookie = 'userID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
 //         document.cookie = 'anonymousID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
 //         document.cookie = 'ActiveChat_anonymousID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-      } else {
-        document.cookie =
-          'userActive=' + true +
-          '; expires=' + now.toUTCString() +
-          '; path=/'
-      }
+//       } else {
+//         document.cookie =
+//           'userActive=' + true +
+//           '; expires=' + now.toUTCString() +
+//           '; path=/'
+//       }
 //         setTimeout(function() {
 //           activechat.track('_page_visit');
 //         }, 3000)
