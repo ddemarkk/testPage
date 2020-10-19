@@ -50,19 +50,19 @@
             } 
             }
           });
-//           activechat.track('Authorized', {
-//             userLogin: userLogin,
-//             userEmail: userEmail,
-//             _email: userEmail,
-//             userId: userId,
-//             customerNumber: customerNumber,
-//           });
-//           if (accessToken && idToken) {
-//             activechat.track('Authorized', {
-//               accessToken: accessToken,
-//               idToken: idToken,
-//             });
-//           };
+          activechat.track('Authorized', {
+            userLogin: userLogin,
+            userEmail: userEmail,
+            _email: userEmail,
+            userId: userId,
+            customerNumber: customerNumber,
+          });
+          if (accessToken && idToken) {
+            activechat.track('Authorized', {
+              accessToken: accessToken,
+              idToken: idToken,
+            });
+          };
         };
         var now = new Date();
         var time = now.getTime();
