@@ -35,30 +35,30 @@
    .toString(16)
    .substring(4)
    }
-        window.acChatWidgetLoaded = function() {
-          var now = new Date();
-        var time = now.getTime();
-        time += 10800 * 1000;
-        now.setTime(time);
-        setTimeout("location.reload(true);",10805 * 1000);
-        var userActive = getCookie('userActive');
-        if (!userActive) {
-          document.cookie =
-            'userActive=' + true +
-            '; expires=' + now.toUTCString() +
-            '; path=/';
-          document.cookie = 'userID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-          document.cookie = 'anonymousID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-          document.cookie = 'ActiveChat_anonymousID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-          document.cookie = 'anonymousID=' + part1 + part2;
-          document.cookie = 'ActiveChat_anonymousID=' + part1 + part2;
-        } else {
-          document.cookie =
-            'userActive=' + true +
-            '; expires=' + now.toUTCString() +
-            '; path=/'
-        }
-        }
+//         window.acChatWidgetLoaded = function() {
+//           var now = new Date();
+//         var time = now.getTime();
+//         time += 10800 * 1000;
+//         now.setTime(time);
+//         setTimeout("location.reload(true);",10805 * 1000);
+//         var userActive = getCookie('userActive');
+//         if (!userActive) {
+//           document.cookie =
+//             'userActive=' + true +
+//             '; expires=' + now.toUTCString() +
+//             '; path=/';
+//           document.cookie = 'userID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+//           document.cookie = 'anonymousID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+//           document.cookie = 'ActiveChat_anonymousID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+//           document.cookie = 'anonymousID=' + part1 + part2;
+//           document.cookie = 'ActiveChat_anonymousID=' + part1 + part2;
+//         } else {
+//           document.cookie =
+//             'userActive=' + true +
+//             '; expires=' + now.toUTCString() +
+//             '; path=/'
+//         }
+//         }
           var script = document.createElement("script");
           script.src = "https://app.activechat.ai/gateway/script/44e60a79-af7b-4637-a9c5-b6bcf7550dab";
           script.id = "ACCW_EMBED";
