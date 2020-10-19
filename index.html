@@ -24,17 +24,6 @@
           ));
           return matches ? decodeURIComponent(matches[1]) : undefined;
         };
-        function randomString() {
-  return Math['floor']((0x1 + Math['random']()) * 0x10000000000000)['toString'](0x10);
-                               };
-  var part1 = randomString();
-  var part2 = randomString();
-  function guid() { return s4() + s4() + s4() + s4() + s4() + s4() + s4() + s4(); }
-  function s4() {
-  return Math.floor((1 + Math.random()) * 0x10000)
-   .toString(16)
-   .substring(4)
-   }
           var script = document.createElement("script");
           script.src = "https://app.activechat.ai/gateway/script/44e60a79-af7b-4637-a9c5-b6bcf7550dab";
           script.id = "ACCW_EMBED";
