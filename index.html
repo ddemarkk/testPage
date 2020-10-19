@@ -40,10 +40,8 @@
             if (event.data === 'open') activechat.track('widget_open');
             else if (event.data === 'close') activechat.track('widget_close');
             if (String(event.data).includes('user') || String(event.data).includes('agent') || String(event.data).includes('bot')) {
-            console.log(event.data)
             if(getCookie('sessionHistory') && (getCookie('sessionHistory').split(',').length < event.data.split(',').length || getCookie('sessionHistory')==='bot')) {
                 document.cookie = 'sessionHistory=' + event.data;
-                console.log(event.data)
                 setTimeout(function() {
                 activechat.track('session_types', { session_type: getCookie('sessionHistory') });
                 }, 6000)
@@ -58,29 +56,18 @@
             userId: userId,
             customerNumber: customerNumber,
           });
-          if (accessToken && idToken) {
-            activechat.track('Authorized', {
-              accessToken: accessToken,
-              idToken: idToken,
-            });
-          };
+          if (accessToken && idToken) activechat.track('Authorized', { accessToken: accessToken, idToken: idToken });
           }, 2000)
         };
         var now = new Date();
         var time = now.getTime();
-        time += 10000;
+        time += 10800 * 1000;
         now.setTime(time);
         setTimeout("location.reload(true);",10805 * 1000);
         setTimeout(function() {
-          document.cookie = 'userID=' + getCookie('userID') +
-        '; expires=' + now.toUTCString() +
-        '; path=/';
-        document.cookie = 'anonymousID=' + getCookie('anonymousID') +
-        '; expires=' + now.toUTCString() +
-        '; path=/';
-        document.cookie = 'ActiveChat_anonymousID=' + getCookie('ActiveChat_anonymousID') +
-        '; expires=' + now.toUTCString() +
-        '; path=/';
+          document.cookie = 'userID=' + getCookie('userID') + '; expires=' + now.toUTCString() + '; path=/';
+          document.cookie = 'anonymousID=' + getCookie('anonymousID') + '; expires=' + now.toUTCString() + '; path=/';
+          document.cookie = 'ActiveChat_anonymousID=' + getCookie('ActiveChat_anonymousID') + '; expires=' + now.toUTCString() + '; path=/';
         }, 3000)
       },
       false
