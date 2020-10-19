@@ -84,13 +84,13 @@
         var userId = window.user_id;
         var customerNumber = window.actual_customer_no;
         window.acTrackingLoaded = function () {
-          document.cookie = 'userID=' +
+          document.cookie = 'userID=' + getCookie('userID') +
             '; expires=' + now.toUTCString() +
             '; path=/';
-          document.cookie = 'anonymousID=' +
+          document.cookie = 'anonymousID=' + getCookie('anonymousID') +
             '; expires=' + now.toUTCString() +
             '; path=/';
-          document.cookie = 'ActiveChat_anonymousID=' +
+          document.cookie = 'ActiveChat_anonymousID=' + getCookie('ActiveChat_anonymousID') +
             '; expires=' + now.toUTCString() +
             '; path=/';
           activechat.track('Authorized', {
