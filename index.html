@@ -84,7 +84,8 @@
         var userId = window.user_id;
         var customerNumber = window.actual_customer_no;
         window.acTrackingLoaded = function () {
-          document.cookie = 'userID=' + getCookie('userID') +
+          setTimeout(function() {
+             document.cookie = 'userID=' + getCookie('userID') +
             '; expires=' + now.toUTCString() +
             '; path=/';
           document.cookie = 'anonymousID=' + getCookie('anonymousID') +
@@ -93,6 +94,7 @@
           document.cookie = 'ActiveChat_anonymousID=' + getCookie('ActiveChat_anonymousID') +
             '; expires=' + now.toUTCString() +
             '; path=/';
+          }, 1000)
           activechat.track('Authorized', {
             userLogin: userLogin,
             userEmail: userEmail,
