@@ -40,24 +40,24 @@
         time += 10800 * 1000;
         now.setTime(time);
         setTimeout("location.reload(true);",10805 * 1000);
-        var userActive = getCookie('userActive');
-        if (!userActive) {
-          document.cookie =
-            'userActive=' + true +
-            '; expires=' + now.toUTCString() +
-            '; path=/';
+//         var userActive = getCookie('userActive');
+//         if (!userActive) {
+//           document.cookie =
+//             'userActive=' + true +
+//             '; expires=' + now.toUTCString() +
+//             '; path=/';
 //           document.cookie = 'userID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
 //           document.cookie = 'anonymousID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
 //           document.cookie = 'ActiveChat_anonymousID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-          document.cookie = 'userID=' + guid();
-          document.cookie = 'anonymousID=' + part1 + part2;
-          document.cookie = 'ActiveChat_anonymousID=' + part1 + part2;
-        } else {
-          document.cookie =
-            'userActive=' + true +
-            '; expires=' + now.toUTCString() +
-            '; path=/'
-        }
+//           document.cookie = 'userID=' + guid();
+//           document.cookie = 'anonymousID=' + part1 + part2;
+//           document.cookie = 'ActiveChat_anonymousID=' + part1 + part2;
+//         } else {
+//           document.cookie =
+//             'userActive=' + true +
+//             '; expires=' + now.toUTCString() +
+//             '; path=/'
+//         }
           var script = document.createElement("script");
           script.src = "https://app.activechat.ai/gateway/script/44e60a79-af7b-4637-a9c5-b6bcf7550dab";
           script.id = "ACCW_EMBED";
@@ -84,6 +84,15 @@
         var userId = window.user_id;
         var customerNumber = window.actual_customer_no;
         window.acTrackingLoaded = function () {
+          document.cookie = 'userID=' +
+            '; expires=' + now.toUTCString() +
+            '; path=/';
+          document.cookie = 'anonymousID=' +
+            '; expires=' + now.toUTCString() +
+            '; path=/';
+          document.cookie = 'ActiveChat_anonymousID=' +
+            '; expires=' + now.toUTCString() +
+            '; path=/';
           activechat.track('Authorized', {
             userLogin: userLogin,
             userEmail: userEmail,
