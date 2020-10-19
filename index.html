@@ -35,7 +35,6 @@
    .toString(16)
    .substring(4)
    }
-        window.acChatWidgetLoaded = function() {
           var now = new Date();
         var time = now.getTime();
         time += 10800 * 1000;
@@ -57,7 +56,6 @@
             'userActive=' + true +
             '; expires=' + now.toUTCString() +
             '; path=/'
-        }
         }
           var script = document.createElement("script");
           script.src = "https://app.activechat.ai/gateway/script/44e60a79-af7b-4637-a9c5-b6bcf7550dab";
