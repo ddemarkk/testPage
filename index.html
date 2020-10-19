@@ -24,17 +24,17 @@
           ));
           return matches ? decodeURIComponent(matches[1]) : undefined;
         };
-        function randomString() {
-  return Math['floor']((0x1 + Math['random']()) * 0x10000000000000)['toString'](0x10);
-                               }
-  var part1 = randomString();
-  var part2 = randomString();
-  function guid() { return s4() + s4() + s4() + s4() + s4() + s4() + s4() + s4(); }
-  function s4() {
-  return Math.floor((1 + Math.random()) * 0x10000)
-   .toString(16)
-   .substring(4)
-   }
+//         function randomString() {
+//   return Math['floor']((0x1 + Math['random']()) * 0x10000000000000)['toString'](0x10);
+//                                };
+//   var part1 = randomString();
+//   var part2 = randomString();
+//   function guid() { return s4() + s4() + s4() + s4() + s4() + s4() + s4() + s4(); }
+//   function s4() {
+//   return Math.floor((1 + Math.random()) * 0x10000)
+//    .toString(16)
+//    .substring(4)
+//    }
 //         window.acChatWidgetLoaded = function() {
 //           var now = new Date();
 //         var time = now.getTime();
@@ -85,9 +85,6 @@
         var userId = window.user_id;
         var customerNumber = window.actual_customer_no;
         window.acTrackingLoaded = function () {
-  //         setTimeout(function() {
-  //           activechat.track('_page_visit');
-  //         }, 3000)
           activechat.track('Authorized', {
             userLogin: userLogin,
             userEmail: userEmail,
