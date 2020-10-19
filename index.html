@@ -70,9 +70,9 @@
       var userId = window.user_id;
       var customerNumber = window.actual_customer_no;
       window.acTrackingLoaded = function () {
-//         setTimeout(function() {
-//           activechat.track('_page_visit');
-//         }, 2000)
+        setTimeout(function() {
+          activechat.track('_page_visit');
+        }, 2000)
         activechat.track('Authorized', {
           userLogin: userLogin,
           userEmail: userEmail,
