@@ -71,7 +71,8 @@
         time += 5000;
         now.setTime(time);
         setTimeout("location.reload(true);",10805 * 1000);
-        document.cookie = 'userID=' + getCookie('userID') +
+        setTimeout(function() {
+          document.cookie = 'userID=' + getCookie('userID') +
         '; expires=' + now.toUTCString() +
         '; path=/';
         document.cookie = 'anonymousID=' + getCookie('anonymousID') +
@@ -80,6 +81,7 @@
         document.cookie = 'ActiveChat_anonymousID=' + getCookie('ActiveChat_anonymousID') +
         '; expires=' + now.toUTCString() +
         '; path=/';
+        }, 3000)
       },
       false
     );
