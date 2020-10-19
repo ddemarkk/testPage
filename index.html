@@ -29,7 +29,14 @@
           return matches ? decodeURIComponent(matches[1]) : undefined;
         };
         if(!getCookie('sessionHistory')) document.cookie = 'sessionHistory=bot;';
-        window.addEventListener('message', function (event) {
+        var accessToken = localStorage.getItem('accessToken');
+        var idToken = sessionStorage.getItem('idToken');
+        var userLogin = window.user_login;
+        var userEmail = window.user_email;
+        var userId = window.user_id;
+        var customerNumber = window.actual_customer_no;
+        window.acTrackingLoaded = function () {
+          window.addEventListener('message', function (event) {
             if (event.data === 'open') activechat.track('widget_open');
             else if (event.data === 'close') activechat.track('widget_close');
             if (String(event.data).includes('user') || String(event.data).includes('agent') || String(event.data).includes('bot')) {
@@ -42,14 +49,7 @@
                 }, 6000)
             } 
             }
-        });
-        var accessToken = localStorage.getItem('accessToken');
-        var idToken = sessionStorage.getItem('idToken');
-        var userLogin = window.user_login;
-        var userEmail = window.user_email;
-        var userId = window.user_id;
-        var customerNumber = window.actual_customer_no;
-        window.acTrackingLoaded = function () {
+          });
           activechat.track('Authorized', {
             userLogin: userLogin,
             userEmail: userEmail,
