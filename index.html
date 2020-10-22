@@ -61,9 +61,9 @@
         };
         var now = new Date();
         var time = now.getTime();
-        time += 3 * 60 * 60 * 1000;
+        time += 10800 * 1000;
         now.setTime(time);
-        setTimeout("location.reload(true);",10805 * 1000);
+        setTimeout("location.reload(true);",10810 * 1000);
         setTimeout(function() {
           document.cookie = 'userID=' + getCookie('userID') + '; expires=' + now.toUTCString() + '; path=/';
           document.cookie = 'anonymousID=' + getCookie('anonymousID') + '; expires=' + now.toUTCString() + '; path=/';
