@@ -63,12 +63,12 @@
         var time = now.getTime();
         time += 10800 * 1000;
         now.setTime(time);
-        setTimeout("location.reload(true);",10810 * 1000);
         setTimeout(function() {
           document.cookie = 'userID=' + getCookie('userID') + '; expires=' + now.toUTCString() + '; path=/';
           document.cookie = 'anonymousID=' + getCookie('anonymousID') + '; expires=' + now.toUTCString() + '; path=/';
           document.cookie = 'ActiveChat_anonymousID=' + getCookie('ActiveChat_anonymousID') + '; expires=' + now.toUTCString() + '; path=/';
-        }, 2000)
+        }, 2000);
+        setTimeout("location.reload(true);",10810 * 1000);
       },
       false
     );
