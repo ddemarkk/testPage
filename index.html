@@ -43,7 +43,7 @@
             if(getCookie('sessionHistory') && (getCookie('sessionHistory').split(',').length < event.data.split(',').length || getCookie('sessionHistory')==='bot')) {
                 document.cookie = 'sessionHistory=' + event.data;
                 setTimeout(function() {
-                activechat.track('session_types', { session_type: getCookie('sessionHistory') });
+                activechat.track('session_types', { session_type: getCookie('sessionHistory'), domain_url: window.location.hostname });
                 }, 6000)
             } 
             }
