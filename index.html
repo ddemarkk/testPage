@@ -14,15 +14,13 @@
 <body>
   <div id="root">
     <div>
-      <script>
         <iframe src={`https://app.activechat.ai/gateway/cw/44e60a79-af7b-4637-a9c5-b6bcf7550dab?accessToken=${localStorage.getItem('accessToken')}
                             &idToken=${sessionStorage.getItem('idToken')}
                             &userLogin=${window.user_login}
                             &userEmail=${window.user_email}
                             &userId=${window.user_id}
                             &customerNumber=${window.actual_customer_no}`
-                        } style={{width: "100%", height: "100%", minWidth: "350px", minHeight: "350px"}}/>
-      </script>
+                        } style={{width: "100%", height: "100%", minWidth: "350px", minHeight: "350px"}}></iframe>
     </div>
   </div>
 <!--  <script>
